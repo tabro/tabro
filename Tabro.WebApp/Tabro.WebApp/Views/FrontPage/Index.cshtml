@@ -1,45 +1,60 @@
-﻿@using System.Web.Optimization
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Tabro.dk</title>
-        @Styles.Render("~/bundles/css")
-    </head>
-    <body>
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Tabro.dk</a>
+﻿@{
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 articleHeaderBlock">
+            <div class="articleHeaderText">
+                <h2>Forage photo booth cardigan, fap church-key synth fanny pack. </h2>
             </div>
-
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Blog</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right center-block">
-                    <li><a class="btn btn-lg" href="https://twitter.com/larstabro" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li><a class="btn btn-lg" href="http://dk.linkedin.com/in/larstabrosorensen/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a class="btn btn-lg" href="https://www.facebook.com/tabro" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-
-
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 articleInfoBlock">
+            <div class="articleInfoComponents">
+                <div class="articleInfoComponent">
+                    <span>27'th of September, '14</span>    
+                </div>
+                <div class="articleInfoComponent">
+                    <a href="#">24 Comments</a>
+                </div>
+                <div class="articleInfoComponent">
+                    <span>Category: </span>
+                    <a href="#">Tech</a>
                 </div>
             </div>
         </div>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-    </body>
-</html>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 ">
+            <div class="articleContainer">
+                <p>
+                    Thundercats typewriter whatever ethical 3 wolf moon, raw denim single-origin coffee tattooed readymade Pinterest normcore sustainable. Gastropub Intelligentsia Thundercats Pitchfork trust fund Godard. Flannel food truck forage, tote bag retro jean shorts literally whatever. Lomo Banksy kitsch, irony vinyl McSweeney's polaroid tofu. Vegan Echo Park +1 semiotics, Intelligentsia Truffaut PBR umami squid kogi. Fingerstache jean shorts chillwave blog. Semiotics umami Wes Anderson, lo-fi iPhone mixtape Carles twee craft beer Kickstarter forage hoodie tofu Vice.
+
+                    Shabby chic typewriter ennui, retro Austin cliche street art polaroid mustache. VHS keytar Bushwick, Kickstarter church-key master cleanse ennui sartorial. Selvage authentic hella, mixtape put a bird on it Truffaut messenger bag Tonx brunch flexitarian DIY gastropub Thundercats Echo Park. Bespoke cardigan PBR&B, vinyl meh Neutra Bushwick Williamsburg sartorial distillery tattooed. Biodiesel selvage mlkshk, Godard VHS fixie drinking vinegar Tonx ugh you probably haven't heard of them sustainable Etsy. Keytar YOLO meh lomo pug put a bird on it. Asymmetrical sartorial PBR&B, raw denim heirloom typewriter occupy before they sold out Bushwick.
+
+                    Flannel Austin normcore, narwhal Cosby sweater Tumblr forage Portland yr Vice synth Schlitz gluten-free. Raw denim sartorial blog, gluten-free cliche jean shorts fanny pack literally sustainable food truck Austin umami twee quinoa. Stumptown cliche lomo bicycle rights pickled post-ironic chillwave actually, wolf plaid fashion axe. PBR pop-up Portland fingerstache, hella Austin mustache Echo Park jean shorts sriracha plaid tofu chia butcher narwhal. Skateboard Blue Bottle street art forage Echo Park, disrupt heirloom Truffaut fingerstache pickled 90's. Lomo before they sold out semiotics, DIY master cleanse ennui synth chia Tonx. Actually drinking vinegar hella, slow-carb McSweeney's Etsy mixtape.
+
+                    Selfies direct trade typewriter cred, wolf slow-carb 90's. Lo-fi hashtag Etsy Godard cornhole Banksy, banh mi YOLO actually heirloom Echo Park. Bitters hoodie Helvetica kogi whatever, shabby chic flexitarian YOLO wayfarers Portland cornhole literally Brooklyn cred. Swag blog fanny pack, sriracha street art readymade High Life umami bitters retro occupy. Fashion axe keffiyeh freegan fanny pack, crucifix gastropub next level. Irony actually banh mi, hoodie viral direct trade mlkshk gastropub mumblecore tattooed. Locavore XOXO gastropub blog, brunch deep v kale chips.
+                    Oh. You need a little dummy text for your mockup? How quaint.
+
+                    I bet you’re still using Bootstrap too…
+                </p>
+            </div>
+            <div class="articleFooter">
+                <div class="articleInfoComponent">
+                    <a href="#">24 Comments</a>
+                </div>
+                <div class="articleInfoComponent" style="float:right">
+                    <span>Share this post: </span>
+                    <a href="#" class="btn btn-xs"><i class="fa fa-twitter fa-2x"></i></a>
+                    <a href="#" class="btn btn-xs"><i class="fa fa-facebook fa-2x"></i></a>
+                    <a href="#" class="btn btn-xs"><i class="fa fa-linkedin fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</section>

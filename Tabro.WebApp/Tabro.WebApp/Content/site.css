@@ -1,0 +1,88 @@
+﻿.articleHeaderBlock {
+    background-image: url("gfx/congruent_outline.png");
+    background-repeat: repeat;
+}
+
+.articleHeaderText {
+    display: block;
+    font-weight: bold;
+    margin: 0 auto;
+    vertical-align: baseline;
+    width: 800px;
+}
+
+.articleHeaderText h2 {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 40px 0 40px 0;
+    overflow: hidden;
+}
+
+.articleInfoBlock {
+    background-color: rgb(169, 33, 33);
+    padding: 10px;
+}
+
+.articleInfoComponents {
+    display: block;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.articleInfoComponent {
+    color: white;
+    display: inline;
+    font-size: 12px;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+.articleContainer {
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 0 1px 0 1px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.articleContainer p {
+    margin: 0 auto;
+    width: 800px;
+}
+
+.articleFooter {
+    background-color: rgb(169, 33, 33);
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+/* Bootstrap overloads */
+
+.navbar {
+    background-image: url("gfx/crossword.png");
+    background-repeat: repeat-x;
+    border: 1px solid transparent;
+    margin-bottom: 0;
+    min-height: 50px;
+    position: relative;
+}
+
+.col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+        padding-left: 400px;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}

@@ -14,7 +14,8 @@ namespace Tabro.WebApp.App_Start
                 .Include("~/Content/bootstrap.css",
                          "~/Content/bootstrap-theme.css",
                          "~/Content/bootstrap-social.css",
-                         "~/Content/font-awesome.css"));
+                         "~/Content/font-awesome.css",
+                         "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));

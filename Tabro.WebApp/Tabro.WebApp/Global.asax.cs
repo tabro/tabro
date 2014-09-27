@@ -21,6 +21,10 @@ namespace Tabro.WebApp
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            var container = UnityConfig.GetConfiguredContainer();
+            UnityWebActivator.Start();
+
+            CirqusConfig.Configure(container);
         }
     }
 }
