@@ -1,0 +1,11 @@
+﻿@using Tabro.WebApp.Models
+@model ArticleViewModel
+@{
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+<a href="/Blogs/@Model.ArticleKey.ToString()#disqus_thread">Comments</a>
+
+<h2>@Model.Header</h2>
+<p>@Model.Body</p>
+
+<div id="disqus_thread"></div>

@@ -34,7 +34,7 @@ namespace Tabro.WebApp.App_Start
         {
             container.RegisterTypes(
                 AllClasses.FromAssemblies(typeof(UnityConfig).Assembly),
-                WithMappings.FromAllInterfaces,
+                WithMappings.FromAllInterfacesInSameAssembly,
                 WithName.Default,
                 WithLifetime.Transient
                 );

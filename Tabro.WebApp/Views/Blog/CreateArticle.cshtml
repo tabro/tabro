@@ -1,0 +1,23 @@
+﻿@model Tabro.WebApp.Models.ArticleViewModel
+@{
+    ViewBag.Title = "CreateArticle";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<h2>CreateArticle</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <div>
+            @Html.LabelFor(x => x.Header, "Header:", new { style = "display: block" })
+            @Html.TextAreaFor(vm => vm.Header)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Body, "Body:", new {style="display: block"})
+            @Html.TextAreaFor(x => x.Body)
+        </div>
+        <input type="submit" value="Submit!"/>
+    </fieldset>
+}
+

@@ -3,6 +3,7 @@ using Ploeh.AutoFixture.Kernel;
 
 namespace Tabro.Domain.Tests
 {
+    // http://stackoverflow.com/questions/20955757/always-freeze-mocks-using-autofixture-xunit-and-moq
     public class MemoizingBuilder : ISpecimenBuilder
     {
         private readonly ISpecimenBuilder _builder;

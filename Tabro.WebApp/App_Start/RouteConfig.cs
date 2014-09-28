@@ -18,6 +18,12 @@ namespace Tabro.WebApp
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "FrontPage", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+             name: "ArticleDefault",
+             url: "Blogs/{year}/{month}/{key}",
+             defaults: new { controller = "Blog", action = "GetArticle", month = UrlParameter.Optional, Key = UrlParameter.Optional}
+         );
         }
     }
 }

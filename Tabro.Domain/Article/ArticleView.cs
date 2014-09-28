@@ -15,6 +15,7 @@ namespace Tabro.Domain.Article
         {
             Header = domainEvent.Header;
             Body = domainEvent.Body;
+            ArticleKey = domainEvent.ArticleKey;
         }
 
         public string Id { get; set; }

@@ -29,7 +29,8 @@ namespace Tabro.WebApp.Controllers
             var viewModels = articles.Select(x => new ArticleViewModel
             {
                 Body = x.Body,
-                Header = x.Header
+                Header = x.Header,
+                ArticleKey = x.ArticleKey
             });
 
             return View(new FrontPageViewModel
