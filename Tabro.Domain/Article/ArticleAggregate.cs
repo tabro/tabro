@@ -10,10 +10,13 @@ namespace Tabro.Domain.Article
         public string Header { get; set; }
         public string Body { get; set; }
         public DateTimeOffset CreatedTime { get; set; }
+        public ArticleKey ArticleKey { get; set; }
 
         public void CreateNew(string header, string body)
         {
-            Emit(new ArticleCreated(header, body, DateTimeOffset.UtcNow));
+            var creationTime = DateTimeOffset.UtcNow;
+            var articleKey = new ArticleKey(header, creationTime);
+            Emit(new ArticleCreated(header, body, creationTime, articleKey));
         }
 
         public void Apply(ArticleCreated e)
@@ -21,6 +24,7 @@ namespace Tabro.Domain.Article
             Header = e.Header;
             Body = e.Body;
             CreatedTime = e.CreatedTime;
+            ArticleKey = e.ArticleKey;
         }
     }
 }

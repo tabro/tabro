@@ -7,6 +7,7 @@ namespace Tabro.Domain.Article
     public class ArticleView : IViewInstance<InstancePerAggregateRootLocator>,
         ISubscribeTo<ArticleCreated>
     {
+        public ArticleKey ArticleKey { get; set; }
         public string Header { get; set; }
         public string Body { get; set; }
 
