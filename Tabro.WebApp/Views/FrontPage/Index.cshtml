@@ -18,10 +18,10 @@
                 <div class="col-md-12 articleInfoBlock">
                     <div class="articleInfoComponents">
                         <div class="articleInfoComponent">
-                            <span>27'th of September, '14</span>
+                            <span>@article.Created.ToEnglishString()</span>
                         </div>
                         <div class="articleInfoComponent">
-                            <a href="/Blogs/@article.ArticleKey.ToString()#disqus_thread">Comments</a>
+                            <a href="/Blogs/@article.ArticleKey.ToString()#disqus_thread" data-disqus-identifier="@article.ArticleKey.ToString()">Comments</a>
                         </div>
                         <div class="articleInfoComponent">
                             <span>Category: </span>

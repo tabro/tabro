@@ -30,7 +30,8 @@ namespace Tabro.WebApp.Controllers
             {
                 Body = x.Body,
                 Header = x.Header,
-                ArticleKey = x.ArticleKey
+                ArticleKey = x.ArticleKey,
+                Created = x.CreatedTime.LocalDateTime
             });
 
             return View(new FrontPageViewModel

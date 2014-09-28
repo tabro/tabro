@@ -34,7 +34,8 @@ namespace Tabro.WebApp.Controllers
             {
                 Header = article.Header,
                 Body = article.Body,
-                ArticleKey = articleKey
+                ArticleKey = articleKey,
+                Created = article.CreatedTime.LocalDateTime
             });
         }
 
