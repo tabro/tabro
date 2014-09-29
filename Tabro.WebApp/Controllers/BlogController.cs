@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using d60.Cirqus;
 using Tabro.Domain.Article;
@@ -19,8 +20,24 @@ namespace Tabro.WebApp.Controllers
             _commandProcessor = commandProcessor;
         }
 
-        // GET: Blog
-        public ActionResult GetArticle(int year, int month, string key)
+        public ActionResult Index()
+        {
+            var articles = _articleRepository.GetAll();
+            var viewModels = articles.Select(x => new ArticleViewModel
+            {
+                Body = x.Body,
+                Header = x.Header,
+                ArticleKey = x.ArticleKey,
+                Created = x.CreatedTime.LocalDateTime
+            });
+
+            return View(new FrontPageViewModel
+            {
+                Articles = viewModels.ToList()
+            });
+        }
+
+        public ActionResult BlogEntry(int year, int month, string key)
         {
             var articleKey = new ArticleKey(key, year, month);
             var article = _articleRepository.GetByArticleKey(articleKey);
@@ -30,12 +47,13 @@ namespace Tabro.WebApp.Controllers
                 return new HttpNotFoundResult("Article not found!");
             }
 
-            return View("Article", new ArticleViewModel
+            return View(new ArticleViewModel
             {
                 Header = article.Header,
                 Body = article.Body,
                 ArticleKey = articleKey,
-                Created = article.CreatedTime.LocalDateTime
+                Created = article.CreatedTime.LocalDateTime,
+                ShowCommentSection = true
             });
         }
 

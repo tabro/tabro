@@ -9,5 +9,6 @@ namespace Tabro.WebApp.Models
         public ArticleKey ArticleKey { get; set; }
         public string Header { get; set; }
         public string Body { get; set; }
+        public bool ShowCommentSection { get; set; }
     }
 }
