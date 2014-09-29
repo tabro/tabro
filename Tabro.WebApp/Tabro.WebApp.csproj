@@ -48,6 +48,9 @@
     <Reference Include="d60.Cirqus.MongoDb">
       <HintPath>..\packages\d60.Cirqus.MongoDb.0.24.4\lib\NET45\d60.Cirqus.MongoDb.dll</HintPath>
     </Reference>
+    <Reference Include="MarkdownDeep">
+      <HintPath>..\packages\MarkdownDeep.Full.1.5\lib\.NetFramework 3.5\MarkdownDeep.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -154,6 +157,7 @@
     <Content Include="Content\gfx\congruent_outline.png" />
     <Content Include="Content\gfx\crossword.png" />
     <Content Include="Content\gfx\light_grey.png" />
+    <Content Include="Content\pretify.css" />
     <Content Include="Content\site.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -170,11 +174,24 @@
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.4.2.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\MarkdownDeep License.txt" />
+    <Content Include="Scripts\MarkdownDeep Quick Reference.txt" />
+    <Content Include="Scripts\MarkdownDeep.js" />
+    <Content Include="Scripts\MarkdownDeepEditor.js" />
+    <Content Include="Scripts\MarkdownDeepEditorUI.js" />
+    <Content Include="Scripts\MarkdownDeepLib.js" />
+    <Content Include="Content\mdd_ajax_loader.gif" />
+    <Content Include="Content\mdd_gripper.png" />
+    <Content Include="Scripts\mdd_help.htm" />
+    <Content Include="Content\mdd_modal_background.png" />
+    <Content Include="Content\mdd_styles.css" />
+    <Content Include="Content\mdd_toolbar.png" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -194,6 +211,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IMarkdownRenderer.cs" />
+    <Compile Include="MarkdownDeepExtensions.cs" />
+    <Compile Include="MarkdownRenderer.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
     <Compile Include="Models\FrontPageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,7 +224,6 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Blog\Index.cshtml" />
-    <Content Include="Views\_LayoutPage.cshtml" />
     <Content Include="Views\Blog\Article.cshtml" />
     <Content Include="Views\Blog\CreateArticle.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />

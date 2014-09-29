@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using d60.Cirqus;
+using MarkdownDeep;
 using Tabro.Domain.Article;
 using Tabro.Domain.Article.Commands;
 using Tabro.WebApp.Models;
@@ -13,19 +15,22 @@ namespace Tabro.WebApp.Controllers
     {
         private readonly IArticleRepository _articleRepository;
         private readonly ICommandProcessor _commandProcessor;
+        private readonly IMarkdownRenderer _markdownRenderer;
 
-        public BlogController(IArticleRepository articleRepository, ICommandProcessor commandProcessor)
+        public BlogController(IArticleRepository articleRepository, ICommandProcessor commandProcessor, IMarkdownRenderer markdownRenderer)
         {
             _articleRepository = articleRepository;
             _commandProcessor = commandProcessor;
+            _markdownRenderer = markdownRenderer;
         }
 
+       
         public ActionResult Index()
         {
             var articles = _articleRepository.GetAll();
             var viewModels = articles.Select(x => new ArticleViewModel
             {
-                Body = x.Body,
+                Body = _markdownRenderer.Transform(x.Body),
                 Header = x.Header,
                 ArticleKey = x.ArticleKey,
                 Created = x.CreatedTime.LocalDateTime
@@ -50,7 +55,7 @@ namespace Tabro.WebApp.Controllers
             return View(new ArticleViewModel
             {
                 Header = article.Header,
-                Body = article.Body,
+                Body = _markdownRenderer.Transform(article.Body),
                 ArticleKey = articleKey,
                 Created = article.CreatedTime.LocalDateTime,
                 ShowCommentSection = true

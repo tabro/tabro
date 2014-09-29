@@ -15,10 +15,17 @@ namespace Tabro.WebApp.App_Start
                          "~/Content/bootstrap-theme.css",
                          "~/Content/bootstrap-social.css",
                          "~/Content/font-awesome.css",
-                         "~/Content/site.css"));
+                         "~/Content/site.css",
+                         "~/Content/mdd_styles.css",
+                         "~/Content/pretify.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-1.4.2.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/markdowndeep").Include(
+                        "~/Scripts/MarkdownDeep.js",
+                        "~/Scripts/MarkdownDeepEditor.js",
+                        "~/Scripts/MarkdownDeepEditorUI.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
