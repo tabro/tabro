@@ -107,7 +107,7 @@ var MarkdownDeepEditor=new function(){
         "L": "link",
         "G": "img",
         "R": "hr",
-        "0": "h0",
+        //"0": "h0",
         "1": "h1",
         "2": "h2",
         "3": "h3",
