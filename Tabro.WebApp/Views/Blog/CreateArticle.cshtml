@@ -1,0 +1,30 @@
+﻿@model Tabro.WebApp.Models.ArticleViewModel
+@{
+    ViewBag.Title = "CreateArticle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateArticle</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <div>
+            @Html.LabelFor(x => x.Header, "Header:", new {style = "display: block"})
+            @Html.TextAreaFor(vm => vm.Header)
+        </div>
+
+        <div style="margin: 0 auto; width: 800px;">
+            <div class="mdd_toolbar_wrap"><div class="mdd_toolbar"></div></div>
+            <div class="mdd_editor_wrap">
+                @Html.LabelFor(x => x.Body, "Body:", new {style = "display: block"})
+                @Html.TextAreaFor(x => x.Body, new {@class = "mdd_editor", cols = "20", rows = "20"})
+            </div>
+            <div class="mdd_resizer_wrap">
+                <div class="mdd_resizer"></div>
+            </div>
+            <div class="mdd_preview"></div>
+        </div>
+        <input type="submit" value="Submit!" />
+    </fieldset>
+}

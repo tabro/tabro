@@ -1,0 +1,10 @@
+﻿@using Tabro.WebApp.Models
+@model FrontPageViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    @foreach (var article in Model.Articles)
+    {
+        @Html.Partial("Article", article);
+    }
