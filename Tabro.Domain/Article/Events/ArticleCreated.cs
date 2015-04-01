@@ -1,9 +1,9 @@
 ﻿using System;
-using d60.Cirqus.Events;
+using EventFlow.Aggregates;
 
 namespace Tabro.Domain.Article.Events
 {
-    public class ArticleCreated : DomainEvent<ArticleAggregate>
+    public class ArticleCreated : AggregateEvent<ArticleAggregate>
     {
         public ArticleCreated(string header, string body, DateTimeOffset createdTime, ArticleKey articleKey)
         {

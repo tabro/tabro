@@ -1,22 +1,28 @@
 ﻿using System;
-using d60.Cirqus.Commands;
+using System.Threading;
+using System.Threading.Tasks;
+using EventFlow.Commands;
 
 namespace Tabro.Domain.Article.Commands
 {
-    public class CreateArticle : Command<ArticleAggregate>
+    public class CreateArticle : ICommand<ArticleAggregate>
     {
-        public CreateArticle(Guid aggregateRootId, string header, string body) : base(aggregateRootId)
+        public CreateArticle(string id, string header, string body)
         {
             Header = header;
             Body = body;
+            Id = id;
         }
 
         public string Header { get; private set; }
         public string Body { get; private set; }
+        public string Id { get; private set; }
 
-        public override void Execute(ArticleAggregate aggregateRoot)
+        public Task ExecuteAsync(ArticleAggregate aggregate, CancellationToken cancellationToken)
         {
-            aggregateRoot.CreateNew(Header, Body);
+            aggregate.CreateNew(Header, Body);
+
+            return Task.FromResult(0);
         }
     }
 }

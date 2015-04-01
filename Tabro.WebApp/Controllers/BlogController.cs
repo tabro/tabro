@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Threading;
 using System.Web.Mvc;
-using d60.Cirqus;
-using MarkdownDeep;
+using EventFlow;
 using Tabro.Domain.Article;
 using Tabro.Domain.Article.Commands;
 using Tabro.WebApp.Models;
@@ -14,13 +13,13 @@ namespace Tabro.WebApp.Controllers
     public class BlogController : Controller
     {
         private readonly IArticleRepository _articleRepository;
-        private readonly ICommandProcessor _commandProcessor;
+        private readonly ICommandBus _commandBus;
         private readonly IMarkdownRenderer _markdownRenderer;
 
-        public BlogController(IArticleRepository articleRepository, ICommandProcessor commandProcessor, IMarkdownRenderer markdownRenderer)
+        public BlogController(IArticleRepository articleRepository, ICommandBus commandBus, IMarkdownRenderer markdownRenderer)
         {
             _articleRepository = articleRepository;
-            _commandProcessor = commandProcessor;
+            _commandBus = commandBus;
             _markdownRenderer = markdownRenderer;
         }
 
@@ -71,8 +70,8 @@ namespace Tabro.WebApp.Controllers
         [HttpPost]
         public ActionResult CreateArticle(ArticleViewModel articleViewModel)
         {
-            _commandProcessor.ProcessCommand(new CreateArticle(Guid.NewGuid(), articleViewModel.Header,
-                articleViewModel.Body));
+            _commandBus.PublishAsync(new CreateArticle(Guid.NewGuid().ToString(), articleViewModel.Header,
+                articleViewModel.Body), CancellationToken.None);
 
             return Redirect("/");
         }

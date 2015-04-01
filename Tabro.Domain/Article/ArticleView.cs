@@ -1,27 +1,23 @@
 ﻿using System;
-using d60.Cirqus.Views.ViewManagers;
-using d60.Cirqus.Views.ViewManagers.Locators;
+using EventFlow.Aggregates;
+using EventFlow.ReadStores;
 using Tabro.Domain.Article.Events;
 
 namespace Tabro.Domain.Article
 {
-    public class ArticleView : IViewInstance<InstancePerAggregateRootLocator>,
-        ISubscribeTo<ArticleCreated>
+    public class ArticleView : IArticleView
     {
-        public DateTimeOffset CreatedTime { get; set; }
-        public ArticleKey ArticleKey { get; set; }
-        public string Header { get; set; }
-        public string Body { get; set; }
+        public DateTimeOffset CreatedTime { get; private set; }
+        public ArticleKey ArticleKey { get; private set; }
+        public string Header { get; private set; }
+        public string Body { get; private set; }
 
-        public void Handle(IViewContext context, ArticleCreated domainEvent)
+        public void Apply(IReadModelContext context, IDomainEvent<ArticleCreated> e)
         {
-            CreatedTime = domainEvent.CreatedTime;
-            Header = domainEvent.Header;
-            Body = domainEvent.Body;
-            ArticleKey = domainEvent.ArticleKey;
+            CreatedTime = e.AggregateEvent.CreatedTime;
+            Header = e.AggregateEvent.Header;
+            Body = e.AggregateEvent.Body;
+            ArticleKey = e.AggregateEvent.ArticleKey;
         }
-
-        public string Id { get; set; }
-        public long LastGlobalSequenceNumber { get; set; }
     }
 }

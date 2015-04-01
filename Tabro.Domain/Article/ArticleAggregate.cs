@@ -1,11 +1,10 @@
 ﻿using System;
-using d60.Cirqus.Aggregates;
-using d60.Cirqus.Events;
+using EventFlow.Aggregates;
 using Tabro.Domain.Article.Events;
 
 namespace Tabro.Domain.Article
 {
-    public class ArticleAggregate : AggregateRoot, IEmit<ArticleCreated>
+    public class ArticleAggregate : AggregateRoot<ArticleAggregate>, IEmit<ArticleCreated>
     {
         public string Header { get; set; }
         public string Body { get; set; }
@@ -25,6 +24,10 @@ namespace Tabro.Domain.Article
             Body = e.Body;
             CreatedTime = e.CreatedTime;
             ArticleKey = e.ArticleKey;
+        }
+
+        public ArticleAggregate(string id) : base(id)
+        {
         }
     }
 }
